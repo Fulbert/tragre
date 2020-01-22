@@ -90,14 +90,22 @@
   </q-layout>
 </template>
 
-<script>
-export default {
-  name: 'MyLayout',
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+import { getModule } from 'vuex-module-decorators';
+import M from '../store/m';
 
-  data () {
-    return {
-      leftDrawerOpen: false
-    }
+@Component
+export default class MyLayout extends Vue {
+  M = getModule(M);
+
+  get leftDrawerOpen() {
+    return this.M.leftDrawerOpen;
+  }
+
+  set leftDrawerOpen(value: boolean) {
+    this.M.setLeftDrawerOpen(value);
   }
 }
 </script>
