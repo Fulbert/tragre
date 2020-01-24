@@ -1,13 +1,13 @@
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators';
-import Store from '../store/index';
+import Store from './index';
 
 @Module({
   dynamic: true,
-  name: 'm',
+  name: 'mapi',
   namespaced: true,
   store: Store
 })
-export default class M extends VuexModule {
+export default class MAPI extends VuexModule {
   public leftDrawerOpen = false;
 
   @Mutation
