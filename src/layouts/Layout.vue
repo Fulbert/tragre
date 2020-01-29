@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-page-container>
       <q-page>
-        <l-map style="width: 100%; height: 100%; min-height: 100vh;"
+        <l-map style="width: 100% height: 100% min-height: 100vh"
           :zoom="map.zoom"
           :center="map.center">
 
@@ -17,11 +17,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Component from 'vue-class-component';
-import { getModule } from 'vuex-module-decorators';
-import MAPI from '../store/mapi';
-import { LMap, LIcon, LTileLayer, LControl, LMarker, LPopup } from 'vue2-leaflet';
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { LMap, LIcon, LTileLayer, LControl, LMarker, LPopup } from 'vue2-leaflet'
 
 @Component({
   components: { 
@@ -38,9 +36,7 @@ export default class Layout extends Vue {
     url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
     zoom: 11,
     center: [45.175502642403586, 5.716667175292969]
-  };
-
-  M = getModule(MAPI);
+  }
 }
 </script>
 
